@@ -1,0 +1,24 @@
+.log_reg_content{
+    padding: 50px;
+    height: 600px;
+    background-image: url(../img/fon2.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+/*.appoi_listappoi_content{*/
+/*    padding: 50px;*/
+/*    height: 600px;*/
+/*    background-image: url(../img/fon3.svg);*/
+/*    background-repeat: no-repeat;*/
+/*    background-position: center center;*/
+/*    background-size: 95% 95%;*/
+/*}*/
+/*.content_color{*/
+/*    background: #224;*/
+/*}*/
+
+.list_appoi_one{
+    margin: 20px;
+    width: 500px;
+    display: grid;
+}

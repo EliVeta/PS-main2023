@@ -1,0 +1,235 @@
+
+{#{% extends 'Main/base.html' %}#}
+{##}
+{#{% block content %}#}
+{#<h2>{{ title }}</h2>#}
+{##}
+{#<div class="intro">#}
+{#        <img class="home" src="../../static/img/home.png">#}
+{#         <div class=button">#}
+{#            <a class = "record" href="appointment/appointment_info/">Записаться</a>#}
+{#            <a class = "record" href="appointment/appointment_info_table/">Мои записи</a>#}
+{#        </div>#}
+{##}
+{##}
+{#    <div class="infos">#}
+{##}
+{#        <div class="block_info b_i_right" >#}
+{#            <div class="b_i_title">Психологическое просвещение</div>#}
+{#            <div class="b_i_text">#}
+{#                <p>Тренинги и семинары для личностного и профессионального развития</p>#}
+{#            </div>#}
+{#        </div>#}
+{##}
+{#        <div class="block_info b_i_left" >#}
+{#            <div class="b_i_title">Психопрофилактика</div>#}
+{#            <div class="b_i_text">#}
+{#                <p>Предупреждение симптомов дезадаптации студентов.</p>#}
+{#            </div>#}
+{#        </div>#}
+{##}
+{#        <div class="block_info b_i_right" >#}
+{#            <div class="b_i_title">Психодиагностика</div>#}
+{#            <div class="b_i_text">#}
+{#                <p>Психологический ананлиз студента на основе личностных особенностей.</p>#}
+{#            </div>#}
+{#        </div>#}
+{##}
+{#        <div class="block_info b_i_left" >#}
+{#            <div class="b_i_title">Психологическое консультирование</div>#}
+{#            <div class="b_i_text">#}
+{#                <p>Помощь в достижении самооценки и  достижении эмоциональной#}
+{#                устойчивости.</p>#}
+{#            </div>#}
+{#        </div>#}
+{#        <div class ="rectangle_int1"></div>#}
+{#        <div class ="text_int1"><p>Наши психологи</p></div>#}
+{##}
+{#            {% if user.is_authenticated %}#}
+{#            <div>#}
+{##}
+{#    </div>#}
+{#            {% endif %}#}
+{#    </div>#}
+{##}
+{#    </div>#}
+{##}
+{##}
+{#    {% for ps in psychologist %}#}
+{#        <div>#}
+{#            <div>#}
+{#                <img src="{{ ps.photo.url }}" alt="Психолог">#}
+{#            </div>#}
+{#            <div>#}
+{#                <p>{{ ps.education }}</p>#}
+{#                <p>{{ ps.experience }}</p>#}
+{#                <p>{{ ps.profinterests }}</p>#}
+{#            </div>#}
+{#        </div>#}
+{##}
+{##}
+{##}
+{#    {% endfor psychologist %}#}
+{##}
+{##}
+{##}
+{##}
+{##}
+{##}
+{#    </div>#}
+{#</div>#}
+{##}
+{##}
+{#{% endblock content %}#}
+
+
+
+
+
+
+
+
+
+
+
+
+{% extends 'Main/base.html' %}
+
+{% block content %}
+<h2 class ="m_titles_page">{{ title }}</h2>
+
+<div>
+
+    <div class="intro">
+        <div>
+            <img class="home" src="../../static/img/home.png">
+            {% if user.is_authenticated %}
+            <div class="b_appoi_my_appoi">
+                <a class = "record" href="appointment/appointment_info/">Записаться</a>
+                <a class = "record" href="appointment/appointment_info_table/">Мои записи</a>
+            </div>
+            {% else %}
+                <a class="nav_link" href="{% url 'log' %}">▷ Войдите, чтобы записаться и просматривать историю записей</a>
+            {% endif %}
+
+        </div>
+
+
+
+    <div class="infos">
+
+        <div class="block_info b_i_left" >
+            <div class="b_i_title">Психопрофилактика</div>
+
+        </div>
+
+        <div class="block_info b_i_right" >
+            <div class="b_i_title">Психодиагностика</div>
+
+        </div>
+
+        <div class="block_info b_i_right" >
+            <div class="b_i_title">Психологическое просвещение</div>
+
+        </div>
+
+        <div class="block_info b_i_left" >
+            <div class="b_i_title">Психологическое консультирование</div>
+
+        </div>
+
+    </div>
+
+    </div>
+</div>
+
+
+<div class ="medium">
+
+    <div id="elem_m_titles_me" class ="title_ps_main">Наши психологи</div>
+
+    <div class="pss_lists">
+        {% for ps in psychologist %}
+        <div class = "psychology_list">
+                        <div class="div_ps_photo">
+                             <img class="ps_photo" src="{{ ps.photo.url }}" alt="Психолог">
+                        </div>
+                    <div class="ps_text">
+                        <p><b>Образование: </b>{{ ps.education }}</p>
+                        <p><b>Стаж работы: </b>{{ ps.experience }} лет</p>
+                        <p><b>Профессиональные интересы: </b>{{ ps.profinterests }}</p>
+                    </div>
+        </div>
+        {% endfor psychologist %}
+    </div>
+
+
+    <div class ="title_ps_main">Отзывы</div>
+    {% for comm in comment %}#}
+        <div>
+            <div>
+                <p>{{ comm.id_user }}</p>
+                <p>{{ comm.text }}</p>
+                <p>{{ comm.created }}</p>
+            </div>
+        </div>
+    {% endfor comment %}
+
+
+
+
+
+
+
+
+
+
+
+
+{#    <div class = "psychology_list">#}
+{#        {% for ps in psychologist %}#}
+{#            {% if forloop.counter <= 3 and forloop.counter >= 1  %}#}
+{#            <div>#}
+{#                    <div>#}
+{##}
+{#                         <img src="{{ ps.photo.url }}" alt="Психолог">#}
+{#                    </div>#}
+{#                <div>#}
+{#                    <p>{{ ps.education }}</p>#}
+{#                    <p>{{ ps.experience }}</p>#}
+{#                    <p>{{ ps.profinterests }}</p>#}
+{#                </div>#}
+{#            </div>#}
+{#            {% endif %}#}
+{#        {% endfor psychologist %}#}
+{#        </div>#}
+</div>
+{##}
+{#    <div class = "psychology_list">#}
+{#        {% for ps in psychologist %}#}
+{#            {% if forloop.counter > 3 %}#}
+{#            <div class="psychology_list">#}
+{#                    <div>#}
+{#                            <img class = "photo" src="{{ ps.photo.url }}" alt="Психолог">#}
+{#                    </div>#}
+{#                <div class = "text_about">#}
+{#                    <p>{{ ps.education }}</p>#}
+{#                    <p>{{ ps.experience }}</p>#}
+{#                    <p>{{ ps.profinterests }}</p>#}
+{#                </div>#}
+{#            </div>#}
+{#        {% endif %}#}
+{#        {% endfor psychologist %}#}
+{#        </div>#}
+
+
+
+
+
+
+
+
+
+
+
+{% endblock content %}

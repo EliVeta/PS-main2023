@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <script type="text/javascript" src="{% static 'js/script1.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jsLes1.js' %}"></script>
+</head>
+<body>
+
+<div>
+    <span class="text"></span>
+</div>
+
+<div>
+    <span class="timer"></span>
+</div>
+
+<h3>Форма добавления психолога</h3>
+<form method="post" action="{% url 'create_psychologist' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+{% load i18n %}
+    <table>
+        {% for field in formPsychologist %}
+            <tr>
+                <td>{{ field.label }}</td>
+                <td>{{ field }}</td>
+            </tr>
+        {% endfor %}
+        <tr>
+            <td align="center" colspan="2">
+                <b>Можете указать доп. информацию о психологе</b>
+            </td>
+        </tr>
+        {% for field in formUrl %}
+            <tr>
+                <td>{{ field.label }}</td>
+                <td>{{ field }}</td>
+            </tr>
+        {% endfor %}
+        <tr>
+            <td align="center" colspan="2">
+                <b>Можете сразу создать для него консультацию</b>
+            </td>
+        </tr>
+        {% for field in formLocation %}
+            <tr>
+                <td>{{ field.label }}</td>
+                <td>{{ field }}</td>
+            </tr>
+        {% endfor %}
+
+            <tr>
+                <td>{{ formConsultation.date.label }}</td>
+                <td>{{ formConsultation.date }}</td>
+            </tr>
+            <tr>
+                <td>{{ formConsultation.time.label }}</td>
+                <td>{{ formConsultation.time }}</td>
+            </tr>
+        <tr>
+            <td colspan="2">
+                <button type="submit">Добавить психолога</button>
+
+            </td>
+        </tr>
+
+    </table>
+
+</form>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

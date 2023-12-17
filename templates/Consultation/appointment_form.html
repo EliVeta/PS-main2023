@@ -1,0 +1,59 @@
+{% csrf_token %}
+<div>{{ form.non_field_errors }}</div>
+
+<table>
+    <tr>
+        <label>{{ formFormat.format.label_tag }}</label>
+        <p>{{ formFormat.format }}</p>
+        <div class="row-form-errors">{{ formFormat.format.errors }}</div>
+    </tr>
+    {% if formFormat.format.initial == 'очно' %}
+        <tr>
+            <label for="{{ formConsultation.id_locations.id_for_label }}">{{ formConsultation.id_locations.label_tag }}</label>
+            <p>
+                {{ formConsultation.id_locations }}
+            </p>
+            <div class="row-form-errors">{{ formConsultation.id_locations.errors }}</div>
+        </tr>
+    {% endif %}
+    {% if formFormat.format.initial == 'онлайн' or formConsultation.id_locations.initial and formFormat.format.initial != '' %}
+        <tr>
+            <label for="{{ formConsultation.id_psychologist.id_for_label }}">{{ formConsultation.id_psychologist.label_tag }}</label>
+            <p>
+                {{ formConsultation.id_psychologist }}
+            </p>
+            <div class="row-form-errors">{{ formConsultation.id_psychologist.errors }}</div>
+        </tr>
+        {% if formConsultation.id_psychologist.initial %}
+            <tr>
+                <label for="{{ formConsultation.date.id_for_label }}">{{ formConsultation.date.label_tag }}</label>
+                <p>
+                    {{ formConsultation.date }}
+                </p>
+                <div class="row-form-errors">{{ formConsultation.date.errors }}</div>
+            </tr>
+            {% if formConsultation.date.initial %}
+                <tr>
+                    <label for="{{ formConsultation.time.id_for_label }}">{{ formConsultation.time.label_tag }}</label>
+                    <p>
+                        {{ formConsultation.time }}
+                    </p>
+                    <div class="row-form-errors">{{ formConsultation.time.errors }}</div>
+                </tr>
+                {% if formConsultation.time.initial %}
+                    <tr>
+                        <label for="{{ formFormat.text.id_for_label }}">{{ formFormat.text.label_tag }}</label>
+                        <p>
+                            {{ formFormat.text }}
+                        </p>
+                        <div class="row-form-errors">{{ formFormat.text.errors }}</div>
+                    </tr>
+                {% endif %}
+            {% endif %}
+        {% endif %}
+    {% endif %}
+</table>
+
+{% if formConsultation.time.initial %}
+    <button class="record" type="submit">Отправить</button>
+{% endif %}

@@ -1,0 +1,53 @@
+{% load static %}
+{% load main_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/base.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/qw.css'%}" type="text/css">
+<title>{{ title }}</title>
+</head>
+<body>
+
+{% block mainmenu %}
+<div class="header_inner">
+
+    <div class="div_left_mainmenu">
+        <img class="logo" src="../../static/img/psih.png">
+
+
+        <a class="nav_link" href="{% url 'main' %}">Главная</a>
+        <a class="nav_link" href="#elem_m_titles_me">Наши психологи</a>
+    </div>
+
+
+    {% if user.is_authenticated %}
+
+        <div class="user_name"><p class="u_n">Вы вошли как <br><b>{{ user.first_name }} {{ user.last_name }}</b> </p></div>
+        <div><a class="nav_link" href="{% url 'logout' %}">Выход</a></div>
+    {% else %}
+        <div>
+            <a class="nav_link" href="{% url 'log' %}">Вход</a>
+            <a class="nav_link" href="{% url 'registr' %}">Регистрация</a>
+        </div>
+
+    {% endif %}
+</div>
+{% endblock mainmenu %}
+
+
+{% block content %}
+
+
+{% endblock content %}
+
+<div class="scroll-top-item" id="scrollTop" title="Вверх"><span>▲</span></div>
+
+<script src="/static/js/jquery.min.js"></script>
+{% block script %}
+    <script src="/static/js/scrollup-button.js"></script>
+{% endblock script %}
+
+</body>
+</html>

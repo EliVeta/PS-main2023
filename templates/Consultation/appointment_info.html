@@ -1,0 +1,46 @@
+{% extends 'Main/base.html' %}
+
+{% block content %}
+    <h2>Мои записи</h2>
+ {% for appointment in appointments %}
+    <div class="list_appoi_one">
+
+        <table>
+                <tr>
+                    <td>Формат</td>
+                    <td>{{ appointment.format }}</td>
+                </tr>
+                <tr>
+                    <td>Специалист</td>
+                    <td>{{ appointment.id_consultation.id_psychologist }}</td>
+                </tr>
+                <tr>
+                    <td>Площадка</td>
+                    <td>{{ appointment.id_consultation.id_locations }}</td>
+                </tr>
+                <tr>
+                    <td>Дата</td>
+                    <td>{{ appointment.id_consultation.date|date:'d.m.Y' }} {{ appointment.id_consultation.time }}</td>
+                </tr>
+                {% if appointment.format == 'онлайн' %}
+                    <tr>
+                        <td>Ссылка</td>
+                        <td><a href="{{ appointment.id_consultation.id_psychologist.urltoonlineconsultation.url }}" target="_blank">{{ appointment.id_consultation.id_psychologist.urltoonlineconsultation.url }}</a></td>
+                    </tr>
+                {% endif %}
+                {% now "Y-m-d" as todays_date %}
+                {% if appointment.id_consultation.date|date:"Y-m-d" > todays_date %}
+                    <tr><td></td><td><a class="record" href={% url 'deleteappoi' appointment.id %} class="=">Отменить запись</a></td></tr>
+                {% endif %}
+
+        </table>
+
+
+    </div>
+       {% endfor %}
+{% endblock %}
+
+{% block script %}
+
+{% endblock script %}
+

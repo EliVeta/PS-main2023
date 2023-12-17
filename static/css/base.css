@@ -1,0 +1,487 @@
+
+
+
+
+
+
+
+
+
+body{
+    margin:  0;
+    background-color: #BADDF6;
+    font-family: 'Puppies Play';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 24px;
+    text-align: center;
+    line-height: 1.6;
+    color: #1B4A93
+}
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+h1, h2, h3, h4, h5 , h6 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Intro*/
+.intro{
+
+    width: 100%;
+    /* height: 100vh; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around
+}
+.header_inner{
+    display: flex;
+    background-color: white;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.medium{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 50px;
+    height: 1200px;
+    /*background-color: #FFFFFF;*/
+}
+.medium_titles{
+ display: flex;
+ align-items: flex-start;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+.m_titles_me p{
+    margin: 0;
+}
+.m_titles_page{
+margin: 10px;
+
+    justify-content: start;
+    align-self: start;
+    justify-self: center;
+    font-family: 'Puppies Play';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 40px;
+    text-align: center;
+
+    color: #1B4A93;
+    background: #BADDF6
+}
+.m_titles_title{
+
+    width: 678px;
+    align: center;
+    margin: 50px;
+
+    font-family: 'Puppies Play';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 36px;
+    text-align: center;
+
+    align-self: center;
+
+    color: #000000;
+    background: #BED5F9
+}
+/* Header*/
+ .header {
+     width: 100%;
+     height: 60px;
+     padding-top: 5px;
+     position: relative;
+     margin: 0px;
+     background: white;
+
+     z-index: 1000;
+ }
+ .nav {
+     position: absolute;
+     width: 1426px;
+     height: 97px;
+     left: -625px;
+     top: 0px;
+ }
+ .nav {
+     font-size: 20px ;
+     text-transform: uppercase;
+ }
+ .nav_link {
+     border: #9ab4e5;
+     display: inline-block;
+     vertical-align: top;
+     margin: 0 20px;
+     color: #1B4A93;
+     text-decoration: none;
+     transition: color .2s linear;
+ }
+
+ .nav_link:hover {
+     color: #9ab4e5;
+ }
+
+
+
+ .logo{
+     width: 37px;
+    height: 37px;
+ }
+ .head {
+    position: absolute;
+    left: 60px;
+    top: 158px;
+
+ }
+ .rectangle1{
+        position: absolute;
+        width: 700px;
+        height: 60px;
+        left: 677px;
+        top: 159px;
+
+        background: linear-gradient(0deg, #FFFFFF, #FFFFFF), linear-gradient(0deg, #FFFFFF, #FFFFFF), linear-gradient(0deg, #FFFFFF, #FFFFFF), #FFFFFF;
+        border-radius: 7px;
+ }
+
+ .rectangle2{
+    position: absolute;
+    width: 211px;
+    height: 46px;
+    left: 1033px;
+    top: 274px;
+
+    background: linear-gradient(0deg, #FFFFFF, #FFFFFF), linear-gradient(0deg, #FFFFFF, #FFFFFF), linear-gradient(0deg, #FFFFFF, #FFFFFF), #FFFFFF;
+    border-radius: 7px;
+ }
+ .rectangle3{
+    position: absolute;
+    width: 365px;
+    height: 47px;
+    left: 677px;
+    top: 374px;
+
+    background: linear-gradient(0deg, #FFFFFF, #FFFFFF), linear-gradient(0deg, #FFFFFF, #FFFFFF), linear-gradient(0deg, #FFFFFF, #FFFFFF), #FFFFFF;
+    border-radius: 7px;
+ }
+ .rectangle4{
+     position: absolute;
+    width: 351px;
+    height: 45px;
+    left: 906px;
+    top: 469px;
+
+    background: linear-gradient(0deg, #FFFFFF, #FFFFFF), linear-gradient(0deg, #FFFFFF, #FFFFFF), linear-gradient(0deg, #FFFFFF, #FFFFFF), #FFFFFF;
+    border-radius: 7px;
+ }
+ .text1{
+    position: absolute;
+    width: 567px;
+    height: 62px;
+    left: 750px;
+    top: 140px;
+
+    font-family: 'Puppies Play';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 24px;
+    text-align: center;
+
+    color: #7EAAED;
+
+    mix-blend-mode: normal;
+ }
+ .text2{
+    position: absolute;
+    width: 339px;
+    height: 49px;
+    left: 969px;
+    top: 260px;
+
+    font-family: 'Puppies Play';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 24px;
+    text-align: center;
+
+    color: #7EAAED;
+ }
+ .text3{
+    position: absolute;
+    width: 524px;
+    height: 47px;
+    left: 601px;
+    top: 360px;
+
+    font-family: 'Puppies Play';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 24px;
+    text-align: center;
+
+    color: #7EAAED;
+ }
+ .text4{
+    position: absolute;
+    width: 510px;
+    height: 50px;
+    left: 827px;
+    top: 454px;
+
+    font-family: 'Puppies Play';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 24px;
+    text-align: center;
+
+    color: #7EAAED;
+ }
+
+ .record{
+    position: relative;
+    padding: 6px;
+    margin: 7px;
+    background-color: #6BA6F4;
+    font-size: 24px;
+    border-radius: 25px ;
+    /* identical to box height */
+
+    color: #FFFFFF;
+
+ }
+ /*.wave6{
+     width: 1400px;
+     height: 1350px;
+     top: 120px
+ }*/
+
+
+.infos{
+ background: #BADDF6;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-end;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-end;
+    justify-content: space-evenly;
+}
+.block_info{
+ display: grid;
+
+ padding: 10px;
+
+}
+.b_i_right{
+    float: right;
+}
+.b_i_left{
+    clear: both;
+}
+.b_i_title{
+    display: initial;
+    padding: 7px;
+    font-family: 'Puppies Play';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+    text-align: center;
+    align-self: center;
+    color: #779e9b;
+    background: white;
+    border-radius: 25px;
+
+
+
+}
+.b_i_text{
+font-align: left;
+    font-size: 14px;
+}
+
+
+.title_ps_main{
+    display: flex;
+    width: 250px;
+    padding: 10px;
+    margin: 10px;
+    font-size: 32px;
+    line-height: 32px;
+    text-align: center;
+    /* border: 10px solid #779e9b; */
+    background: white;
+    color: #1B4A93;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+
+
+
+
+.wave{
+    width: 100%;
+    position: static;
+    vertical-align: bottom;
+}
+.wave2{
+    margin-top: -55px;
+}
+
+.text_int1{
+    position: absolute;
+    width: 323px;
+    height: 42px;
+    left: 20px;
+    top: 2770px;
+
+    font-family: 'Puppies Play';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 32px;
+    text-align: center;
+
+    color: #BADDF6;
+}
+.psihology{
+    width: 1100px;
+    height: 600px;
+    margin-top: 2800px;
+}
+.photo{
+    position: absolute;
+    width: 240px;
+    height: 240px;
+}
+.text_about{
+    font-family: 'Puppies Play';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 20px;
+    text-align: center;
+    text-indent: 6px;
+}
+
+
+
+
+
+
+.home {
+    max-width: 90%;
+    display: flex;
+    position: relative;
+}
+
+.button{
+    display:flex;
+}
+
+
+
+/*Scroll to top button*/
+#scrollTop{
+    display:none;
+    font-size: 100%;
+    right: 10px;
+    bottom: 30px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    position: fixed;
+    z-index: 1000;
+    border: 1px solid #7cb3d7;
+    background-color: #7cb3d7;
+    color: blue;
+    cursor: pointer;
+    transition: 0.5s;
+    border-radius: 50%;
+}
+
+#scrollTop>span {
+    font-size: .8em;
+}
+#scrollTop:hover{
+    background-color: #7cb3d7;
+    transition: 0.5s;
+}
+#scrollTop:active{
+    background-color: #7cb3d7;
+}
+
+.user_name{
+    color: black;
+    font-size: 70%;
+    width: 40%;
+}
+.u_n{
+    display: inline-block;
+
+}
+
+.div_left_mainmenu{
+    display: flex;
+    justify-content: start;
+}
+
+.b_appoi_my_appoi{
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.pss_lists{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.psychology_list{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 30px;
+}
+.div_ps_photo{
+    position: relative;
+    width: 400px;
+    height: 400px;
+
+}
+.ps_photo{
+    width: 400px;
+    height: 400px;
+}
+.ps_text{
+    position: relative;
+    width: 400px;
+    background: white;
+    font-weight: 400;
+    font-size: 18px;
+    text-align: left;
+    text-indent: 6px;
+    padding: 6px;
+
+}

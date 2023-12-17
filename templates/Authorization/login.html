@@ -1,0 +1,28 @@
+{% extends 'Main/base.html' %}
+
+{% block content %}
+<div class="log_reg_content">
+<h2>Вход</h2>
+    <div>
+        <form method="post" action="">
+            {% csrf_token %}
+            {# Общие ошибки при авторизации пользователя #}
+            <div>{{ form.non_field_errors }}</div>
+            <table>
+                {% for f in form %}
+                <tr>
+                        <label for="{{ f.id_for_label }}">{{ f.label }}</label>
+                        <div>{{ f }}</div>
+                        {# Ошибки связанные с заполнением полей #}
+                        <div class="row-form-errors">{{ f.errors }}</div>
+
+                </tr>
+                {% endfor %}
+            </table>
+            {# {{ form.as_p }} #}
+            <button class = "record" type="submit" >Войти</button>
+        </form>
+    </div>
+
+</div>
+{% endblock %}

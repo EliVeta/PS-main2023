@@ -1,0 +1,15 @@
+{% extends 'Main/base.html' %}
+
+{% block content %}
+    <h2>Отмена записи</h2>
+    <div>
+        <div>Дата консультации: </div>
+        <div>{{ oneappoidel.id_consultation.date|date:'d.m.Y' }} {{ oneappoidel.id_consultation.time }}</div>
+    </div>
+    <form method='post' action="">
+        {% csrf_token %}
+        <button class="record" type="submit">Отменить запись</button>
+    </form>
+{% endblock %}
+
+
